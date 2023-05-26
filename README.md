@@ -54,6 +54,11 @@ npx cypress open
 docker run --network="host" -it -v "$PWD":/e2e -w /e2e cypress/included:9.2.0
 ```
 
+No windows:
+```bash
+docker run --network="host" -it -v ${PWD}:/e2e -w /e2e cypress/included:9.2.0
+```
+
 Observação: na primeira vez que for executado, esse comando pode demorar alguns minutos. pois ele vai baixar a imagem do Cypress e realizar o seu build.
 
 Veja também que essse comando já vai rodar um primeiro teste de exemplo, bem simples, que implementamos no no arquivo [spec1.js](https://github.com/aserg-ufmg/demo-cypress/blob/main/cypress/cypress/integration/spec1.js):
