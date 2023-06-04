@@ -21,17 +21,15 @@ describe('Teste End-to-End', () => {
   })
   it('Teste4: Realiza uma compra', () => {
     // Localiza e clica no botão "Comprar"
-    cy.contains('Comprar').click()
-
-    // Aguarda até que o pop-up seja exibido
-    cy.wait(5000)
-
+     cy.get("[data-id=3]").within(() => {
+      cy.contains('Comprar').click().then;
+      // Aguarda até que o pop-up seja exibido
+      cy.wait(2000);
+   });
     // Verifica se a mensagem de sucesso está presente no pop-up
-    // cy.get('.swal-text').contains('Sua compra foi realizada com sucesso')
     cy.contains('Sua compra foi realizada com sucesso').should('be.visible')
 
     // Fecha o pop-up clicando em seu botão
-    // cy.get('.popup .fechar').click()
     cy.get('.swal-button').click()
   })
 })
